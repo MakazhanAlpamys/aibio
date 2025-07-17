@@ -59,6 +59,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, password, role) => {
     try {
+      // Исправляем URL для регистрации, API_URL уже содержит '/api'
       await axios.post(`${API_URL}/register`, {
         username,
         password,
@@ -68,6 +69,7 @@ export const AuthProvider = ({ children }) => {
       setError(null);
       return true;
     } catch (err) {
+      console.error('Registration error:', err);
       setError(err.response?.data?.error || 'Ошибка при регистрации');
       return false;
     }
