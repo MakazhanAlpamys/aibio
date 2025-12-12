@@ -1,111 +1,111 @@
-# AiBio - Образовательная платформа по биологии
+# AiBio - Biology Educational Platform
 
-AiBio - это интерактивная образовательная платформа, которая помогает изучать биологию с помощью современных технологий, включая искусственный интеллект, 3D-модели и интерактивные тесты.
+AiBio is an interactive educational platform that helps students learn biology using modern technologies, including artificial intelligence, 3D models, and interactive tests.
 
-## Особенности
+## Features
 
-- 🧠 **ИИ-ассистент**: Чат-бот на основе Gemini API для ответов на вопросы по биологии
-- 📚 **Учебные материалы**: Система создания и управления учебными материалами
-- 🧪 **Интерактивные тесты**: Викторины и тесты для проверки знаний
-- 🔬 **3D-модели клеток**: Интерактивные модели биологических структур
-- 📱 **QR-коды**: Быстрый доступ к материалам через QR-коды
-- 📊 **Анализ прогресса**: Отслеживание успеваемости учеников
+- 🧠 **AI Assistant**: Chatbot powered by Gemini API for answering biology questions
+- 📚 **Learning Materials**: System for creating and managing educational content
+- 🧪 **Interactive Tests**: Quizzes and tests to assess knowledge
+- 🔬 **3D Cell Models**: Interactive models of biological structures
+- 📱 **QR Codes**: Quick access to materials via QR codes
+- 📊 **Progress Analytics**: Track student performance and progress
 
-## Требования
+## Requirements
 
 - Node.js 14+
 - PostgreSQL 12+
-- API-ключ Gemini от Google
+- Gemini API key from Google
 
-## Установка и запуск
+## Installation and Setup
 
 ### Backend
 
-1. Перейдите в директорию backend:
+1. Navigate to the backend directory:
    ```
    cd backend
    ```
 
-2. Установите зависимости:
+2. Install dependencies:
    ```
    npm install
    ```
 
-3. Создайте файл .env на основе env.example:
+3. Create a .env file based on env.example:
    ```
    cp env.example .env
    ```
 
-4. Отредактируйте файл .env, добавив свои настройки подключения к базе данных и API-ключ Gemini.
+4. Edit the .env file and add your database connection settings and Gemini API key.
 
-5. Запустите сервер:
+5. Start the server:
    ```
    npm start
    ```
 
 ### Frontend
 
-1. Перейдите в директорию frontend:
+1. Navigate to the frontend directory:
    ```
    cd frontend
    ```
 
-2. Установите зависимости:
+2. Install dependencies:
    ```
    npm install
    ```
 
-3. Запустите frontend:
+3. Start the frontend:
    ```
    npm start
    ```
 
-## Структура проекта
+## Project Structure
 
 ### Backend
 
-- `index.js` - Основной файл сервера
-- `env.example` - Шаблон для настройки переменных окружения
+- `index.js` - Main server file
+- `env.example` - Template for environment variables configuration
 
 ### Frontend
 
-- `/src/components` - React компоненты
-  - `/auth` - Компоненты авторизации
-  - `/chat` - Чат-бот с Gemini API
-  - `/dashboard` - Панель управления
-  - `/models` - 3D-модели клеток
-  - `/materials` - Учебные материалы
-  - `/quizzes` - Система тестов и викторин
+- `/src/components` - React components
+  - `/auth` - Authentication components
+  - `/chat` - Chatbot with Gemini API
+  - `/dashboard` - Management dashboard
+  - `/models` - 3D cell models
+  - `/materials` - Learning materials
+  - `/quizzes` - Quiz and test system
 
 ## API Endpoints
 
-### Аутентификация
-- `POST /api/register` - Регистрация нового пользователя
-- `POST /api/login` - Аутентификация пользователя
+### Authentication
+- `POST /api/register` - Register a new user
+- `POST /api/login` - Authenticate a user
 
-### Материалы
-- `GET /api/materials` - Получить все материалы
-- `GET /api/materials/:id` - Получить конкретный материал
-- `POST /api/materials` - Создать новый материал (только учителя)
+### Materials
+- `GET /api/materials` - Get all materials
+- `GET /api/materials/:id` - Get a specific material
+- `POST /api/materials` - Create a new material (teachers only)
 
-### Квизы
-- `GET /api/quizzes` - Получить все тесты
-- `GET /api/quizzes/:id` - Получить конкретный тест с вопросами
-- `POST /api/quizzes` - Создать новый тест (только учителя)
-- `POST /api/quizzes/:id/submit` - Отправить ответы на тест
+### Quizzes
+- `GET /api/quizzes` - Get all quizzes
+- `GET /api/quizzes/:id` - Get a specific quiz with questions
+- `POST /api/quizzes` - Create a new quiz (teachers only)
+- `POST /api/quizzes/:id/submit` - Submit quiz answers
 
-### Прогресс
-- `GET /api/progress` - Получить прогресс ученика
-- `GET /api/teacher/progress` - Получить прогресс всех учеников (только учителя)
+### Progress
+- `GET /api/progress` - Get student progress
+- `GET /api/teacher/progress` - Get all students' progress (teachers only)
 
-### Чат-бот и QR-коды
-- `POST /api/chat` - Отправить сообщение чат-боту
-- `POST /api/qrcode` - Сгенерировать QR-код
+### Chatbot and QR Codes
+- `POST /api/chat` - Send a message to the chatbot
+- `POST /api/qrcode` - Generate a QR code
 
-## Примечание по безопасности
+## Security Notes
 
-Для реального развертывания рекомендуется:
-1. Настроить HTTPS
-2. Использовать более сложные пароли для БД и JWT
-3. Настроить rate limiting для API-эндпоинтов
-4. Добавить дополнительные проверки безопасности 
+For production deployment, it is recommended to:
+1. Configure HTTPS
+2. Use stronger passwords for database and JWT
+3. Configure rate limiting for API endpoints
+4. Add additional security checks
