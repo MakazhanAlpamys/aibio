@@ -1,4 +1,4 @@
-# AiBio - Biology Educational Platform
+# AiBio - Biology Educational Platform(1st place PowerUp)
 
 AiBio is an interactive educational platform that helps students learn biology using modern technologies, including artificial intelligence, 3D models, and interactive tests.
 
